@@ -1,0 +1,268 @@
+/* Existing App.css content ... */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #007aff; /* Brighter Apple Blue */
+  --primary-dark: #005bb5;
+  --light-bg: #f9f9fb; /* Slightly lighter background */
+  --card-bg: #ffffff;
+  /* Softer shadow for a more modern feel */
+  --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.04), 0 3px 6px rgba(0, 0, 0, 0.03);
+  --card-hover-shadow: 0 12px 24px rgba(0,0,0,0.05), 0 5px 10px rgba(0,0,0,0.04);
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73; /* Adjusted for better contrast */
+  --text-tertiary: #86868b; /* Adjusted for better contrast */
+  --border-color: #dcdce1; /* Softer border */
+  --success-color: #30d158; /* Brighter Apple Green */
+  --danger-color: #ff453a;  /* Brighter Apple Red */
+  --warning-color: #ff9f0a;
+
+  --input-bg: #f0f0f0; /* Input background for subtle depth */
+  --input-focus-border: #007aff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-bg);
+  color: var(--text-primary);
+  line-height: 1.6; /* Increased line height for readability */
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+/* ... other existing styles ... */
+
+/* Enhanced Apple-inspired card design */
+.apple-card {
+  background-color: var(--card-bg);
+  border-radius: 18px; /* More rounded corners */
+  box-shadow: var(--card-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden; /* Keep this if content might overflow */
+}
+
+.apple-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+/* Enhanced Apple-inspired buttons */
+.apple-button {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 10px; /* Slightly less circular, more modern button */
+  font-weight: 500; /* SF Pro Text Medium */
+  font-size: 15px; /* Common Apple button font size */
+  padding: 0.6rem 1.4rem; /* Adjusted padding */
+  border: none;
+  transition: all 0.2s ease;
+  /* Slight inner shadow for depth - optional */
+  /* box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.05); */
+}
+
+.apple-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  /* box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.1); */
+}
+
+.apple-button:active {
+  transform: translateY(0px) scale(0.98);
+  background-color: var(--primary-dark);
+}
+
+
+.apple-button:disabled {
+  opacity: 0.5; /* More pronounced disabled state */
+  cursor: not-allowed;
+  background-color: #d1d1d6; /* Apple-like disabled button color */
+  color: #8e8e93;
+}
+
+.apple-button-secondary {
+  background-color: #e5e5ea; /* Apple secondary button color */
+  color: var(--primary-color); /* Use primary color for text for better emphasis */
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid transparent; /* For consistent height with primary */
+  transition: all 0.2s ease;
+}
+
+.apple-button-secondary:hover {
+  background-color: #dcdce1;
+}
+.apple-button-secondary:active {
+  transform: scale(0.98);
+  background-color: #d1d1d6;
+}
+
+/* Icon button style for table actions etc. */
+.apple-button-icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.6rem; /* Smaller padding for icon buttons */
+  border-radius: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.apple-button-icon:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+.apple-button-icon svg { /* Ensure SVG icons within these buttons pick up text color */
+    stroke: currentColor; 
+}
+
+
+/* Enhanced Apple-inspired input fields */
+.apple-input {
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  padding: 0.8rem 1rem; /* Increased padding for better touch targets */
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--card-bg); /* Match card background or slightly off-white */
+  /* background-color: #fdfdfd; */ /* A very light grey */
+  width: 100%;
+  color: var(--text-primary);
+}
+.apple-input::placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.8;
+}
+
+.apple-input:focus {
+  outline: none;
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15); /* Softer focus ring */
+}
+.apple-input:disabled {
+  background-color: #f0f0f0;
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+/* Enhanced Apple-inspired table */
+.apple-table-container { /* Add this class to the div wrapping the table */
+  border: 1px solid var(--border-color);
+  border-radius: 12px; /* Consistent with card radius */
+  overflow: hidden; /* Ensures border-radius is applied to table corners */
+  box-shadow: var(--card-shadow); /* Optional: add subtle shadow to table container */
+}
+
+.apple-table {
+  width: 100%;
+  border-collapse: collapse; /* Changed to collapse for cleaner lines */
+}
+
+.apple-table th, .apple-table td {
+  padding: 0.9rem 1.1rem; /* Slightly more padding */
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px; /* Consistent font size */
+}
+
+.apple-table th {
+  background-color: #f9f9fb; /* Lighter header */
+  color: var(--text-secondary);
+  font-weight: 500; /* SF Pro Text Medium */
+  text-transform: none; /* Remove uppercase if any */
+  letter-spacing: normal; /* Remove letter spacing if any */
+}
+
+.apple-table tbody tr:hover {
+  background-color: rgba(0, 122, 255, 0.03); /* Subtle hover for rows */
+}
+
+.apple-table tr:last-child td {
+  border-bottom: none; /* Remove border for the last row */
+}
+
+
+/* Enhanced Form Group styling */
+.apple-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500; /* Medium weight for labels */
+  color: var(--text-secondary);
+}
+
+/* Status log container - minor tweaks for better appearance */
+.status-log-container {
+  background-color: #f5f5f7; /* Slightly darker for contrast if on white card */
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  min-height: 100px; /* Ensure it has some height even when empty */
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 1rem;
+  font-family: 'SF Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6; /* Better readability for logs */
+  color: var(--text-primary);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.04); /* Subtle inner shadow */
+}
+.status-log-container div:last-child {
+    margin-bottom: 0; /* Remove margin from last log entry */
+}
+
+
+/* Hide scrollbar for clean UI (already present, good) */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Loading spinner (already present, good) */
+.loader {
+  display: inline-block;
+  width: 24px; /* Slightly larger */
+  height: 24px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  animation: loader-spin 0.8s linear infinite; /* Faster spin */
+}
+
+@keyframes loader-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Pulse animation - can be fine-tuned if needed */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 122, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(0, 122, 255, 0); /* Slightly larger pulse */
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 122, 255, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* ... rest of your App.css ... */

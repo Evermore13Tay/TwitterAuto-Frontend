@@ -1,0 +1,33 @@
+/* Add any global styles or Tailwind base/component/utility imports here if not relying purely on CDN utilities */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f0f2f5; /* A light gray background */
+}
+
+#root {
+    padding: 20px;
+}
+
+/* Basic button styling if not fully overridden by Tailwind */
+button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #e9e9e9;
+}
+
+button:hover {
+    background-color: #dcdcdc;
+}
+
+/* Basic input styling */
+input[type=\"text\"], input[type=\"password\"], input[type=\"number\"], select, textarea {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+} 
